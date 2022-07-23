@@ -12,6 +12,10 @@ export class TasksService {
     private tasksRepository: TasksRepository,
   ) {}
 
+  async getTaskById(id:string): Promise<{
+    
+  }
+
   // private tasks: Task[] = [];
   // getAllTasks() {
   //   return this.tasks;
