@@ -1,3 +1,4 @@
+
 import { NotFoundException } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
 import { CreateTaskDto } from './dto/create-task.dto';
@@ -20,3 +21,4 @@ export class TasksRepository extends Repository<Task> {
   }
 
 }
+

@@ -34,6 +34,7 @@ export class TasksController {
     return this.tasksService.removeTask(id);
   }
 
+
   // // @Get()
   // // getAllTasks(): Task[] {
   // //   return this.tasksService.getAllTasks();
@@ -55,7 +56,7 @@ export class TasksController {
   //   return this.tasksService.getOneTask(id);
   // }
 
-  // @Post(/tasks)
+  // @Post()
   // createTask(@Body() createTaskDto: CreateTaskDto): Task {
   //   return this.tasksService.createTask(createTaskDto);
   // }
