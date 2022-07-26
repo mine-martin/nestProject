@@ -4,20 +4,16 @@ import { CreateTaskDto } from './dto/create-task.dto';
 import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { TasksRepository } from './tasks.repository';
 import { InjectRepository } from '@nestjs/typeorm';
-<<<<<<< HEAD
 import { Task } from './task.entity';
 import { clearConfigCache } from 'prettier';
 
 
-=======
->>>>>>> d65f5f57eea8c029eb2c50bcd76f7c378fb26da3
 
 @Injectable()
 export class TasksService {
   constructor(
     @InjectRepository(TasksRepository)
     private tasksRepository: TasksRepository,
-<<<<<<< HEAD
   ) { }
 
   async getTaskById(id: string): Promise<Task> {
@@ -44,14 +40,6 @@ export class TasksService {
   }
 
 
-=======
-  ) {}
-
-  async getTaskById(id:string): Promise<{
-    
-  }
-
->>>>>>> d65f5f57eea8c029eb2c50bcd76f7c378fb26da3
   // private tasks: Task[] = [];
   // getAllTasks() {
   //   return this.tasks;
