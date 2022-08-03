@@ -16,11 +16,13 @@ import { GetTasksFilterDto } from './dto/get-tasks-filter.dto';
 import { UpdateStatusDto } from './dto/update-task-status.dto';
 import { Task } from './task.entity';
 import { AuthGuard } from '@nestjs/passport';
+import { User } from 'src/auth/user.entity';
+import { Getuser } from 'src/auth/get-user.decorator';
 
 @Controller('tasks')
 @UseGuards(AuthGuard())
 export class TasksController {
-  constructor(private tasksService: TasksService) { }
+  constructor(private tasksService: TasksService) {}
 
   @Get()
   getTasks(@Query() filterDto: GetTasksFilterDto): Promise<Task[]> {
@@ -30,12 +32,15 @@ export class TasksController {
 
   @Get('/:id')
   getTaskById(@Param('id') id: string): Promise<Task> {
-    return this.tasksService.getTaskById(id)
+    return this.tasksService.getTaskById(id);
   }
 
   @Post()
-  createTask(@Body() createTaskDto: CreateTaskDto): Promise<Task> {
-    return this.tasksService.createTask(createTaskDto);
+  createTask(
+    @Body() createTaskDto: CreateTaskDto,
+    @Getuser() user: User,
+  ): Promise<Task> {
+    return this.tasksService.createTask(createTaskDto, user);
   }
 
   @Delete('/:id')
