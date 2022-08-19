@@ -9,9 +9,9 @@ import { TasksService } from './tasks.service';
   imports: [
     // import other modules here
     TypeOrmModule.forFeature([TasksRepository]),
-    AuthModule
+    AuthModule,
   ],
   controllers: [TasksController],
   providers: [TasksService],
 })
-export class TasksModule { }
+export class TasksModule {}
